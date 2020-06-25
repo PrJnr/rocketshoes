@@ -1,3 +1,5 @@
+Aplicativo desenvolvido para o Bootcamp da Rocketseat, estudando conceitos do React, Redux, Redux Sagas, Actions entre outros...
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
