@@ -1,4 +1,4 @@
-Aplicativo desenvolvido para o Bootcamp da Rocketseat, estudando conceitos do React, Redux, Redux Sagas, Actions entre outros...
+Aplicativo desenvolvido para o Bootcamp da Rocketseat, estudando conceitos do React, Redux, Redux Sagas e React Hooks.
 
 
 ## Available Scripts
