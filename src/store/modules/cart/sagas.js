@@ -12,7 +12,7 @@ function* addToCart({ id }) {
         state.cart.find((p) => p.id === id)
     );
 
-    const stock = yield call(api.get, `/stock/${id}`);
+    const stock = yield call(api.get, `stock/${id}`);
 
     const stockAmount = stock.data.amount;
 
@@ -30,7 +30,7 @@ function* addToCart({ id }) {
     if (productExists) {
         yield put(updateAmountSuccess(id, amount));
     } else {
-        const response = yield call(api.get, `/products/${id}`);
+        const response = yield call(api.get, `products/${id}`);
         const data = {
             ...response.data,
             amount: 1,
@@ -39,24 +39,19 @@ function* addToCart({ id }) {
 
         yield put(addToCartSuccess(data));
 
-        history.push('/cart');
+        // history.push('/cart');
     }
 }
 
 function* updateAmount({ id, amount }) {
-    if (amount <= 0) {
-        toast.error('Quantidade minima invalida');
-        return;
-    }
+    if (amount <= 0) return;
 
-    const stock = yield call(api.get, `/stock/${id}`);
+    const stock = yield call(api.get, `stock/${id}`);
 
     const stockAmount = stock.data.amount;
 
     if (amount > stockAmount) {
-        toast.error(
-            `Quantidade solicitada fora de estoque... Quantidade em estoque: ${stockAmount}`
-        );
+        toast.error(`Quantidade solicitada fora de estoque... `);
         return;
     }
 

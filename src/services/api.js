@@ -6,4 +6,4 @@ const api = axios.create({
 
 export default api;
 
-// RODAR API -> json-server server.json -p 3333 -d 2000
+// RODAR API -> json-server server.json -p 3333        (-d 2000) = delai de 2 segundos
